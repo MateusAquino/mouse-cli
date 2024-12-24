@@ -116,8 +116,6 @@ class Overlay(QWidget):
             for i, char in enumerate(chars_y):
                 y_position = int(i * real_line_height)
                 painter.drawLine(0, y_position, self.width(), y_position)
-                if self.active == char:
-                    painter.setPen(active_color)
                 if self.view == "cartesian":
                     painter.drawText(
                         QRect(0, y_position, line_width, line_height),
@@ -130,11 +128,12 @@ class Overlay(QWidget):
                         Qt.AlignCenter,
                         char,
                     )
-                painter.setPen(primary_color)
         if (self.one_by_one and self.active != None) or not self.one_by_one:
             for i, char in enumerate(chars_x):
                 x_position = int(i * real_line_width)
                 painter.drawLine(x_position, 0, x_position, self.height())
+                if self.active == char:
+                    painter.setPen(active_color)
                 if self.view == "cartesian":
                     painter.drawText(
                         QRect(x_position, 0, line_width, line_height),
@@ -147,6 +146,7 @@ class Overlay(QWidget):
                         Qt.AlignCenter,
                         char,
                     )
+                painter.setPen(primary_color)
         if self.view == "grid":
             for i, xChar in enumerate(chars_x):
                 for j, yChar in enumerate(chars_y):
