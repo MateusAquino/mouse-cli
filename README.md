@@ -52,6 +52,14 @@
 
 You can now set up custom shortcuts for `mouse-cli` in your distro to suit your specific needs.
 
+---
+
+### ⌨️ Keyboard Shortcuts
+
+- **Escape/Delete:** Exit the overlay.
+- **Backspace:** Reset the active selection or exit if none is active.
+- **Space:** Temporarily increase opacity to 100%.
+- **Alphanumeric Keys (0-9, A-Z):** Navigate and select grid elements.
 
 ---
 
@@ -106,15 +114,6 @@ usage: init.py [-h] [--exclude-numbers {none,all,x,y}] [--opacity OPACITY] [--vi
    mouse-cli -b scroll -sf 1 -p # Scroll up (from current location)
    mouse-cli -b scroll -sf -1 -p # Scroll down (from current location)
    ```
-
----
-
-### ⌨️ Keyboard Shortcuts
-
-- **Escape/Delete:** Exit the overlay.
-- **Backspace:** Reset the active selection or exit if none is active.
-- **Space:** Temporarily increase opacity to 100%.
-- **Alphanumeric Keys (0-9, A-Z):** Navigate and select grid elements.
 
 ---
 
