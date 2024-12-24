@@ -1,17 +1,33 @@
-# mouse-cli
+<h1 align="center">
+    <img width="600" src="header.png" align="center"></img>
+</h1>
+<p align="center">🖱️ Control mouse actions through keyboard interactions.</p>
 
-`mouse-cli` is a tool designed to enhance mouse accessibility by allowing users to interact with their mouse using keyboard shortcuts. It overlays the screen with a transparent grid or custom interface, enabling precise mouse actions, such as clicking or dragging, using predefined keyboard inputs. This tool is particularly useful for users with limited mobility or those who prefer keyboard-based interaction.
+<p align="center">
+  <a aria-label="Node version" href="https://www.python.org/downloads/release/python-370/">
+    <img src="https://img.shields.io/badge/python-3.7+-info?logo=Python"></img>
+  </a>
+</p>
 
-## Installation
 
-### Prerequisites
+## 🖱️ mouse-cli
+
+<p align="left">
+  <a target="_blank" href="https://mateusaquino.github.io/stardewids/"><img width="528px" alt="Example Overlay" title="Example Overlay" align="right" src="https://github.com/user-attachments/assets/75db6de8-aa28-4e6f-870b-88e2860d325f"/></a>
+</p>
+
+`mouse-cli` is a tool designed to enhance mouse accessibility by allowing users to interact with their mouse using keyboard shortcuts. It overlays the screen with a transparent grid or custom interface, enabling fast and precise mouse actions, such as clicking or dragging, using predefined keyboard inputs. This tool is particularly useful for users with limited mobility or those who prefer keyboard-based interaction.
+
+### 🚀 Installation
+
+#### Prerequisites
 
 - Python 3.7 or higher
 - Required Python packages:
   - `pyautogui`
   - `PyQt5`
 
-### Steps
+#### Steps
 
 1. Clone the repository:
    ```bash
@@ -29,14 +45,17 @@
    python init.py
    ```
 
-4. (optional) Create a shortcut to the script for easy access (e.g., on .zshrc):
+4. (optional) Create a shortcut to the script for easier access (e.g., on .zshrc):
    ```bash
    function mouse-cli { python /path/to/mouse-cli/init.py $@ }
    ```
 
+You can now set up custom shortcuts for `mouse-cli` in your distro to suit your specific needs.
+
+
 ---
 
-## Usage
+### 📟 Usage
 
 The tool can be launched with various optional arguments to customize its behavior. Below is the list of available arguments:
 
@@ -46,9 +65,9 @@ usage: init.py [-h] [--exclude-numbers {none,all,x,y}] [--opacity OPACITY] [--vi
                [--button {left,right,middle,double,move,drag,scroll}] [--use-current-position] [--scroll-factor SCROLL_FACTOR]
 ```
 
-### Key Options
+#### Key Options
 
-- **`--help`:** Show the help message and exit.
+- **`--help` or `-h`:** Show the help message and exit.
 - **`--exclude-numbers` or `-en`:** Exclude numbers from the grid (options: `none`, `all`, `x`, `y`).
 - **`--opacity` or `-o`:** Set the overlay opacity (default: `0.45`).
 - **`--view` or `-v`:** Set the view layout (`grid`, `cartesian`, or `cross`).
@@ -62,14 +81,14 @@ usage: init.py [-h] [--exclude-numbers {none,all,x,y}] [--opacity OPACITY] [--vi
 - **`--use-current-position` or `-p`:** Directly execute the mouse action at the current position.
 - **`--scroll-factor` or `-sf`:** Set the scroll factor for the `scroll` action.
 
-### Example Commands
+#### Example Commands
 
 1. Launch the overlay with default settings:
    ```bash
    mouse-cli
    ```
 
-2. Launch the overlay with custom colors, opacity and font:
+2. Launch the overlay with custom colors, opacity and font family/size:
    ```bash
    mouse-cli -c "#FF00007F" -ac "#00FF007F" -bc "#000000FF" -o 0.6 -s 16 -f "Fira Code"
    ```
@@ -90,7 +109,7 @@ usage: init.py [-h] [--exclude-numbers {none,all,x,y}] [--opacity OPACITY] [--vi
 
 ---
 
-## Keyboard Shortcuts
+### ⌨️ Keyboard Shortcuts
 
 - **Escape/Delete:** Exit the overlay.
 - **Backspace:** Reset the active selection or exit if none is active.
@@ -99,11 +118,11 @@ usage: init.py [-h] [--exclude-numbers {none,all,x,y}] [--opacity OPACITY] [--vi
 
 ---
 
-## Contribution
+### 🤝 Contribution
 
 We welcome contributions! Feel free to submit issues or pull requests on [GitHub](https://github.com/yourusername/mouse-keyboard-overlay).
 
-### To Contribute:
+#### To Contribute:
 
 1. Fork the repository.
 2. Create a feature branch (`git checkout -b feature-name`).
@@ -113,7 +132,7 @@ We welcome contributions! Feel free to submit issues or pull requests on [GitHub
 
 ---
 
-## Acknowledgments
+### 🫂 Acknowledgments
 
 - [**mouseless:**](https://mouseless.click/) For the inspiration.
 - **PyQt5:** For the GUI framework.
