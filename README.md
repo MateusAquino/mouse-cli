@@ -13,7 +13,7 @@
 ## 🖱️ mouse-cli
 
 <p align="left">
-  <a target="_blank" href="https://mateusaquino.github.io/stardewids/"><img width="528px" alt="Example Overlay" title="Example Overlay" align="right" src="https://github.com/user-attachments/assets/75db6de8-aa28-4e6f-870b-88e2860d325f"/></a>
+  <a target="_blank" href="https://mateusaquino.github.io/stardewids/"><img width="428px" alt="Example Overlay" title="Example Overlay" align="right" src="https://github.com/user-attachments/assets/75db6de8-aa28-4e6f-870b-88e2860d325f"/></a>
 </p>
 
 `mouse-cli` is a tool designed to enhance mouse accessibility by allowing users to interact with their mouse using keyboard shortcuts. It overlays the screen with a transparent grid or custom interface, enabling fast and precise mouse actions, such as clicking or dragging, using predefined keyboard inputs. This tool is particularly useful for users with limited mobility or those who prefer keyboard-based interaction.
