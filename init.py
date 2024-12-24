@@ -28,6 +28,7 @@ class Overlay(QWidget):
         self.size = args.size
         self.view = args.view
         self.active = None
+        self.toggle_shift = False
         self.setWindowOpacity(args.opacity)
 
         # Set transparency and make the background transparent
@@ -44,6 +45,8 @@ class Overlay(QWidget):
             self.close()
         elif event.key() == Qt.Key_Backspace and self.active == None:
             self.close()
+        elif event.key() == Qt.Key_Tab:
+            self.toggle_shift = not self.toggle_shift
         elif event.key() == Qt.Key_Backspace:
             self.active = None
             self.update()
@@ -105,16 +108,21 @@ class Overlay(QWidget):
         line_width = screen_width // len(chars_x)
         real_line_height = screen_height / len(chars_y)
         real_line_width = screen_width / len(chars_x)
+        y_offset = 0 if not self.toggle_shift else real_line_height / 2
+        x_offset = 0 if not self.toggle_shift else real_line_width / 2
+
         self.x_map = {
-            char: int((i + 0.5) * real_line_width) for i, char in enumerate(chars_x)
+            char: int((i + 0.5) * real_line_width + x_offset)
+            for i, char in enumerate(chars_x)
         }
         self.y_map = {
-            char: int((i + 0.5) * real_line_height) for i, char in enumerate(chars_y)
+            char: int((i + 0.5) * real_line_height + y_offset)
+            for i, char in enumerate(chars_y)
         }
 
         if (self.one_by_one and self.active == None) or not self.one_by_one:
             for i, char in enumerate(chars_y):
-                y_position = int(i * real_line_height)
+                y_position = int(i * real_line_height + y_offset)
                 painter.drawLine(0, y_position, self.width(), y_position)
                 if self.view == "cartesian":
                     painter.drawText(
@@ -130,7 +138,7 @@ class Overlay(QWidget):
                     )
         if (self.one_by_one and self.active != None) or not self.one_by_one:
             for i, char in enumerate(chars_x):
-                x_position = int(i * real_line_width)
+                x_position = int(i * real_line_width + x_offset)
                 painter.drawLine(x_position, 0, x_position, self.height())
                 if self.active == char:
                     painter.setPen(active_color)
@@ -150,8 +158,8 @@ class Overlay(QWidget):
         if self.view == "grid":
             for i, xChar in enumerate(chars_x):
                 for j, yChar in enumerate(chars_y):
-                    x_position = int(i * real_line_width)
-                    y_position = int(j * real_line_height)
+                    x_position = int(i * real_line_width + x_offset)
+                    y_position = int(j * real_line_height + y_offset)
 
                     if self.active == xChar:
                         painter.setPen(active_color)

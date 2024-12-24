@@ -60,6 +60,7 @@ You can now set up custom shortcuts for `mouse-cli` in your distro to suit your 
 - **Backspace:** Reset the active selection or exit if none is active.
 - **Space:** Temporarily increase opacity to 100%.
 - **Alphanumeric Keys (0-9, A-Z):** Navigate and select grid elements.
+- **Tab**: Toggle shift offset between grid elements for precise selection.
 
 ---
 
